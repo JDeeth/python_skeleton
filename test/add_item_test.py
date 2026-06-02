@@ -1,6 +1,6 @@
 import unittest
 
-from source.model import Product, Order, LineItem
+from source.model import Product, Order
 
 
 class AddItem(unittest.TestCase):
@@ -26,7 +26,7 @@ class AddItem(unittest.TestCase):
 
         order.add_item(product, 1)
 
-        self.assertIn(LineItem(product=product, quantity=1), order.items())
+        self.assertIn(Order.LineItem(product=product, quantity=1), order.items())
 
 if __name__ == '__main__':
     unittest.main()
