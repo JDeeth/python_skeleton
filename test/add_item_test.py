@@ -1,15 +1,7 @@
 import unittest
 
-class Product:
-    def __init__(self, stock, hold):
-        pass
+from source.model import Product, Order
 
-    def hold(self):
-        return 1
-
-class Order:
-    def add_item(self, product, quantity):
-        pass
 
 class AddItem(unittest.TestCase):
     def test_AddItemWithSufficientStock(self):
