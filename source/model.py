@@ -1,7 +1,7 @@
 class Product:
-    def __init__(self, stock, hold, id=0):
-        self.hold = hold
+    def __init__(self, *, id, stock, hold):
         self.id = id
+        self.hold = hold
 
     def add_hold(self, quantity):
         self.hold += quantity
