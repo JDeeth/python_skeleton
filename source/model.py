@@ -15,16 +15,16 @@ class Order:
 
     def add_item(self, product, quantity):
         product.add_hold(quantity)
-        self._items.append(Item(product, quantity))
+        self._items.append(LineItem(product, quantity))
 
     def items(self):
         return self._items
 
 
-class Item:
+class LineItem:
     def __init__(self, product, quantity):
         self.product = product
         self.quantity = quantity
 
     def __eq__(self, other):
-        return isinstance(other, Item) and other.product == self.product and other.quantity == self.quantity
+        return isinstance(other, LineItem) and other.product == self.product and other.quantity == self.quantity
