@@ -1,6 +1,6 @@
 import unittest
 
-from source.model import Product, Order
+from source.model import Product, Order, Item
 
 
 class AddItem(unittest.TestCase):
@@ -19,6 +19,14 @@ class AddItem(unittest.TestCase):
         order.add_item(product, 2)
 
         self.assertEqual(2, product.hold)
+
+    def test_AddItemWithQtyOneAddsItemToOrder(self):
+        product = Product(stock=7, hold=0, id=327)
+        order = Order()
+
+        order.add_item(product, 1)
+
+        self.assertIn(Item(product=product, quantity=1), order.items())
 
 if __name__ == '__main__':
     unittest.main()
